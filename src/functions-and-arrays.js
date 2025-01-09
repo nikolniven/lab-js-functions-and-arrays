@@ -20,29 +20,18 @@ const words = [
 
 function findLongestWord(arr) {
   let wordAtm = "";
-  if (!arr) {
-    return null;
-  } else {
-    for (let i = 0; i < arr.length; i++) {
-      // loop runs until all array elements are checked
-      if (wordAtm.length < arr[i].length) {
-        wordAtm = arr[i];
-      }
+  if (!arr.length) return null;
+  for (let i = 0; i < arr.length; i++) {
+    // loop runs until all array elements are checked
+    if (wordAtm.length < arr[i].length) {
+      wordAtm = arr[i];
     }
-    return wordAtm;
   }
+  return wordAtm;
 }
 
 // Iteration 3 | Sum Numbers
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
-
-/*function sumNumbers(arr) {
-    let currentNr = '';
-    for( let i = 0; i >= numbers.length; i ++){
-        for ()
-        curretNr == numbers.splice(0)
-    }
-}*/
 
 function sumNumbers(arr) {
   let currentVal = 0;
@@ -57,8 +46,11 @@ console.log(sumNumbers(numbers));
 // Iteration 4 | Numbers Average
 const numbers2 = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers() {}
-
+function averageNumbers(arr) {
+  if (!arr.length) return 0;
+  const sumArr = sumNumbers(arr);
+  return sumArr / arr.length;
+}
 // Iteration 5 | Find Elements
 const words2 = [
   "machine",
@@ -71,4 +63,13 @@ const words2 = [
   "disobedience",
 ];
 
-function doesWordExist() {}
+const isthere = "ing";
+
+function doesWordExist(arr, isthere) {
+  if (!arr.length) return null;
+  if (arr.includes(isthere)) {
+    return true;
+  } else {
+    return false;
+  }
+}
